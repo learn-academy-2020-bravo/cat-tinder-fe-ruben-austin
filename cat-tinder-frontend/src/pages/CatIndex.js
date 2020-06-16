@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ListGroup, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
-import cats from './cats'
+import cats from '../cats'
 
 const CatIndex = (props) => {
   const [allCats, setAllCats] = useState(cats)
@@ -8,12 +8,15 @@ const CatIndex = (props) => {
         <>
         { allCats.map((cat, index) => {
           return(
+            <>
+            <p>All the cats.</p>
             <ListGroup key={ index }>
               <ListGroupItemHeading>{ cat.name }</ListGroupItemHeading>
                 <ListGroupItemText>{ cat.age } - { cat.enjoys }</ListGroupItemText>
             </ListGroup>
-          )})}
             </>
+          )})}
+        </>
 )}
 
 export default CatIndex

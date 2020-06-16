@@ -16,6 +16,12 @@ const cats = [
     name: 'Mr. Meowsalot',
     age: 12,
     enjoys: "Being in charge."
+  },
+  {
+    id: 4,
+    name: 'Meowbert',
+    age: 25,
+    enjoys: "Infinte wisdom, Most powerful of Magiks"
   }
 ]
 
