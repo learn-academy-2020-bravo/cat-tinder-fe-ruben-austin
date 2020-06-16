@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { ListGroup, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
-
+import cats from './cats'
 
 const CatIndex = (props) => {
-  const [cat, setCat] = useState()
+  const [allCats, setAllCats] = useState(cats)
     return(
         <>
-        { props.cats.map((cat, index) => {
+        { allCats.map((cat, index) => {
           return(
             <ListGroup key={ index }>
               <ListGroupItemHeading>{ cat.name }</ListGroupItemHeading>
