@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
-
+import cats from './cats'
 import Header from './components/Header'
 import CatIndex from './pages/CatIndex'
 
-const App = () => {
+
+  const App = () => {
+    const [allcats, setAllCats] = useState(cats)
+      // allCats: cats
+
     return(
-      <React.Fragment>
+
         <Router>
         <Header />
           <Switch>
-            <Route exact path="/" component={ CatIndex } />
+            <Route exact path="/" render={ (props) => <CatIndex cats={ this.state.allCats } /> } />
           </Switch>
         </Router>
-      </React.Fragment>
+
     )
 }
 export default App
