@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { ListGroup, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+  } from 'reactstrap';
 import cats from '../cats'
 
 const CatIndex = (props) => {
@@ -9,11 +12,14 @@ const CatIndex = (props) => {
         { allCats.map((cat, index) => {
           return(
             <>
-            <p>All the cats.</p>
-            <ListGroup key={ index }>
-              <ListGroupItemHeading>{ cat.name }</ListGroupItemHeading>
-                <ListGroupItemText>{ cat.age } - { cat.enjoys }</ListGroupItemText>
-            </ListGroup>
+            <Card>
+                <CardImg top width="100%" src="#" alt="Card image cap" />
+                <CardBody key={ index }>
+                    <CardTitle>{ cat.name }</CardTitle>
+                    <CardSubtitle>{ cat.age }</CardSubtitle>
+                    <CardText>{ cat.enjoys }</CardText>
+                </CardBody>
+            </Card>
             </>
           )})}
         </>
