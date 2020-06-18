@@ -1,1 +1,19 @@
+.card{
+  display: flex;
+  width: 200px;
+}
+/*.cardImg{
+  height: 185px;
+  width:185px;
+} */
+#mainPageCards{
+  display: flex;
+}
 
+.input-text {
+  width: 50%;
+  display: flex;
+}
+#submit{
+  margin-left: 1em;
+}
