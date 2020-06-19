@@ -39,10 +39,10 @@ const CatList = () => {
             <>
               <Col xs="6" sm="4" md="3">
               <Card>
-                  <CardImg top width="100%" src='#' alt="This is the alt text" />
+
+                  <CardImg top width="100%" src={cat.images} alt="This is the alt text" />
                   <CardBody >
-                    <ListGroup key={ index }>
-                      <img src="../images/cattinder1.png"/>
+                      <ListGroup key={ index }>
                       <CardTitle >{ cat.name }</CardTitle>
                       <CardSubtitle>{ cat.age }</CardSubtitle>
                       <CardText>{ cat.enjoys }</CardText>

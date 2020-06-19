@@ -9,7 +9,8 @@ const [cats, setCats] = useState([])
 const [form, setForm] = useState({
       name: '',
       age: '',
-      enjoys: ''
+      enjoys: '',
+      images:''
 })
 const handleChange = e => {
     setForm({
@@ -39,7 +40,7 @@ const pushCats = (freshCat) => {
     })
     .then(res =>{
       if(res.ok) {
-        window.location.replace("/cats")
+        window.location.replace("/")
       }
     })
 }
@@ -81,10 +82,22 @@ return(
       value={ form.enjoys }
       placeholder="with a placeholder"
     />
+    </Col>
+    </FormGroup>
+    <FormGroup>
+      <Label htmlFor="images" id="images" sm={2}>Image URL</Label>
+      <Col sm={10} md={6} lg={5}>
+      <Input
+        type="text"
+        name="images"
+        onChange={ handleChange }
+        value={ form.images }
+        placeholder="Put Image Url Here"
+      />
      </Col>
   </FormGroup>
    <Button onClick={handleSubmit} htmlFor="submit" id="submit" >Add New Cat</Button>
-   { success && <Redirect to="/"/> }
+   { success && <Redirect to="http://localhost:3001/"/> }
     </Form>
 )
 }
