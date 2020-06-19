@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import { Form, FormGroup, Label, Input, Button, Col} from 'reactstrap'
+import { Redirect, Link } from 'react-router-dom'
 import '../App.css'
 
 const NewCat = () => {
+const [success, setSuccess] = useState(false)
 const [cats, setCats] = useState([])
 const [form, setForm] = useState({
       name: '',
@@ -25,22 +27,22 @@ const handleNewCat = (e) =>{
 const handleSubmit = e => {
   e.preventDefault()
   setCats(cats => [...cats,form])
-  console.log(form)
+  pushCats(form).then()
 }
-// const pushCats = (freshCat) => {
-//     return fetch("http://localhost:3000/cats", {
-//       body: JSON.stringify(freshCat),
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       method: "POST"
-//     })
-//     .then(res =>{
-//       if(res.ok) {
-//         window.location.replace("/cats")
-//       }
-//     })
-// }
+const pushCats = (freshCat) => {
+    return fetch("http://localhost:3000/cats", {
+      body: JSON.stringify(freshCat),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(res =>{
+      if(res.ok) {
+        window.location.replace("/cats")
+      }
+    })
+}
 return(
 <Form>
   <FormGroup>
@@ -82,7 +84,8 @@ return(
      </Col>
   </FormGroup>
    <Button onClick={handleSubmit} htmlFor="submit" id="submit" >Add New Cat</Button>
-</Form>
+   { success && <Redirect to="/"/> }
+    </Form>
 )
 }
 export default NewCat
