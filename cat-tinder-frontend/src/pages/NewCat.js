@@ -55,7 +55,7 @@ return(
         onChange={ handleChange }
         value={ form.name }
         className = "input-text"
-        placeholder="with a placeholder"
+        placeholder="Write you Catz! name here."
       />
      </Col>
   </FormGroup>
@@ -68,7 +68,7 @@ return(
       name="age"
       onChange={ handleChange }
       value={ form.age }
-      placeholder="with a placeholder"
+      placeholder="How old is your Cat?"
     />
      </Col>
   </FormGroup>
@@ -80,7 +80,7 @@ return(
       name="enjoys"
       onChange={ handleChange }
       value={ form.enjoys }
-      placeholder="with a placeholder"
+      placeholder="What does your Cat enjoy?"
     />
     </Col>
     </FormGroup>

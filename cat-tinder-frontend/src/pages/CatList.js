@@ -3,7 +3,8 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, ListGroup, Row, Col
   } from 'reactstrap';
-
+import { Link } from 'react-router-dom'
+import '../App.css'
 
 const CatList = () => {
     //Create an empty array to hold all the cats
@@ -38,14 +39,14 @@ const CatList = () => {
             return(
             <>
               <Col xs="6" sm="4" md="3">
-              <Card>
+              <Card id="cardstyle" onClick= { () => {window.location.replace(`/show/${cat.id}`)}} >
 
                   <CardImg top width="100%" src={cat.images} alt="This is the alt text" />
                   <CardBody >
                       <ListGroup key={ index }>
-                      <CardTitle >{ cat.name }</CardTitle>
-                      <CardSubtitle>{ cat.age }</CardSubtitle>
-                      <CardText>{ cat.enjoys }</CardText>
+                      <CardTitle id="namestyle">{ cat.name }</CardTitle>
+                      <CardSubtitle>{ cat.age } Years Old</CardSubtitle>
+                      <CardText>Enjoys: { cat.enjoys }</CardText>
                       </ListGroup>
                   </CardBody>
               </Card>

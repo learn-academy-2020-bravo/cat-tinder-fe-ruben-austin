@@ -2,12 +2,18 @@
   display: flex;
   width: 200px;
 }
+.lead{
+  margin-left: 1em;
+}
 /*.cardImg{
   height: 185px;
   width:185px;
 } */
 #mainPageCards{
   display: flex;
+}
+h1{
+  color: white;
 }
 
 .input-text {
@@ -16,4 +22,21 @@
 }
 #submit{
   margin-left: 1em;
+}
+#jumbotron{
+  background: #8a2387; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8a2387, #e94057, #f27121); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8a2387, #e94057, #f27121); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: cursive;
+  color: white;
+}
+#cardstyle{
+  margin: 2em;
+  width: 12em;
+  height: 85%;
+  text-overflow: ellipsis;
+}
+
+#namestyle{
+  font-weight: bold;
 }
